@@ -6,6 +6,8 @@
     become_user: root
     become_method: sudo
     raw: test -e /usr/bin/python || ( echo 'http_proxy={{http_proxy}}' >>/etc/environment)
+    raw: test -e /usr/bin/python || ( echo 'http_proxy={{https_proxy}}' >>/etc/environment)
+    changed_when: False
   - name: Install python for Ansible
     become: yes
     become_user: root
