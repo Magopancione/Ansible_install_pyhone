@@ -15,9 +15,7 @@
     raw: test -e /usr/bin/python || ( echo 'http_proxy={{http_proxy}}' >>/etc/environment; source . /etc/environment; apt -y update && apt install -y python-minimal)
     changed_when: False
   - setup: # aka gather_facts
-  
-  - hosts: all
-  pre_tasks:
+ 
   - name: "generate /etc/hosts.ansible file"
     template: "src=etc/hosts.j2 dest='/etc/hosts.ansible' owner=root group=root mode=0644"
     tags: etc_hosts
