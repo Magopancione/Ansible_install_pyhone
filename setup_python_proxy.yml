@@ -1,5 +1,5 @@
 #gather_facts: False
-- hosts: all
+- hosts: xenials 
   pre_tasks:   
   - name: Install proxyenvironment
     ansible_python_interpreter=/usr/bin/python3
