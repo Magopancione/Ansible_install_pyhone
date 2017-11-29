@@ -1,10 +1,8 @@
 #gather_facts: False
-
-
 - hosts: all
-vars:
-    ansible_python_interpreter=/usr/bin/python3
   pre_tasks:   
+  vars:
+    ansible_python_interpreter=/usr/bin/python3
   - name: Install proxyenvironment
     become: yes
     become_user: root
